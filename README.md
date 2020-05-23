@@ -8,4 +8,5 @@ unstable for the time being.
 Any addons I make that use it you can be sure will not break with updates (or at least, they'll have an update alongside this addon).
 
 Attributions:
+
 Icons made by https://www.flaticon.com/authors/freepik from https://www.flaticon.com
