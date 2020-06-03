@@ -31,7 +31,6 @@ function PANEL:Init()
     self:SetImageHoveredColor(DiscreteUI.Colors.White)
     self:SetImageIdleColor(DiscreteUI.Colors.Secondary)
     self:SetImageColor(DiscreteUI.Colors.Secondary)
-    self:SetImageSize(0)
 
     self:SetFont("DiscreteUI.Button.Font")
     self:SetTextColor(DiscreteUI.Colors.White)
@@ -89,6 +88,10 @@ function PANEL:GetImage()
     return self._image
 end
 
+function PANEL:GetImageSize()
+    return self.m_imageSize or self:GetTall()*0.8
+end
+
 function PANEL:Paint(w, h)
     draw.RoundedBox(self:GetRoundness(),0, 0, w, h, self:GetCurrentColor())
 
@@ -97,8 +100,8 @@ function PANEL:Paint(w, h)
     surface.SetMaterial(self:GetImage())
 
     local size = self:GetImageSize()
-    local x = w/2 - size/2 + 1
-    local y = h/2 - size/2 + 1
+    local x = w/2 - size/2
+    local y = h/2 - size/2
 
     surface.DrawTexturedRect(x, y, size, size)
 end

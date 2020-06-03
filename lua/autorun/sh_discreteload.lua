@@ -52,3 +52,5 @@ elseif( CLIENT ) then
 		end
 	end
 end
+
+hook.Call("DiscreteUI.PostLoaded")

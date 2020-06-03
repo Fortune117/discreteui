@@ -24,7 +24,7 @@ DiscreteUI.Colors =
 
 DiscreteUI.Fonts =
 {
-    Primary = "Acari Sans",
+    Primary = "Trebuchet24",
     Title = "Fenwick Outline"
 }
 
