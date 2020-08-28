@@ -59,5 +59,3 @@ hook.Call("DiscreteUI.PostLoaded")
 if SERVER then
 	resource.AddWorkshop("2211704047")
 end 
-
-end 
