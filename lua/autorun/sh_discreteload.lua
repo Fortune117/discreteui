@@ -54,3 +54,10 @@ elseif( CLIENT ) then
 end
 
 hook.Call("DiscreteUI.PostLoaded")
+
+--Adding resources for GUI materials.
+if SERVER then
+	resource.AddWorkshop("2211704047")
+end 
+
+end 
