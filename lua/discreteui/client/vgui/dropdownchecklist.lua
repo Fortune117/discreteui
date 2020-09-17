@@ -52,8 +52,12 @@ function PANEL:CreateOptionsList()
     self.list:SetDraggable(false)
     self.list:ShowCloseButton(false)
     self.list:SetTitle("")
+
+    self.scroll = vgui.Create("DiscreteUI.ScrollPanel", self.list)
+    self.scroll:Dock(FILL)
+
     for k,v in ipairs(self.options) do
-        local option = vgui.Create("DiscreteUI.Button", self.list)
+        local option = self.scroll:Add("DiscreteUI.Button")
         option:Dock(TOP)
         option:SetTall(25)
         option:DockMargin(border, border, border, 0)
@@ -104,8 +108,8 @@ function PANEL:CreateOptionsList()
     local x, y = self:LocalToScreen(0, self:GetTall())
     self.list:SetPos(x, y)
 
+    self.list:SetTall(math.min(#self.options*25 + 25, 250))
     self.list:InvalidateLayout(true)
-    self.list:SizeToChildren(false, true)
     self.list:MakePopup()
     self.list:SetIsMenu(true)
 
